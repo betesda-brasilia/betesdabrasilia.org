@@ -1,0 +1,34 @@
+{
+	"name": "danielcandeira.com",
+	"version": "1.0.0",
+	"engines": {
+		"node": "16.x"
+	},
+	"description": "Eleventy website",
+	"main": ".eleventy.js",
+	"scripts": {
+		"start": "npx concurrently \"npm run serve\" \"npm run css -- --watch\"",
+		"serve": "npx eleventy --serve",
+		"css": "npx postcss src/css/global.css -o dist/css/global.css",
+		"production": "NODE_ENV=production npx eleventy && NODE_ENV=production npm run css"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"@11ty/eleventy": "^2.0.0",
+		"@notionhq/client": "^2.2.3",
+		"concurrently": "^7.6.0",
+		"cssnano": "^5.1.15",
+		"postcss": "^8.4.21",
+		"postcss-cli": "^10.1.0",
+		"postcss-import": "^15.1.0",
+		"postcss-import-ext-glob": "^2.1.1",
+		"postcss-js": "^4.0.1",
+		"prettier": "^2.8.4",
+		"slugify": "^1.6.5"
+	},
+	"devDependencies": {
+		"tailwindcss": "^3.2.7"
+	}
+}
