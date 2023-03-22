@@ -1,11 +1,14 @@
 .card {
 	background-color: var(--color-dark);
 	padding: var(--space-m);
-	width: 100%;
 }
 
 .card h2 {
 	font-size: var(--size-step-3);
+}
+
+.card h3 {
+	font-size: var(--size-step-2);
 }
 
 .card[data-variation='secondary'] {
@@ -13,7 +16,7 @@
 	color: var(--color-dark-shade);
 }
 
-.card[data-variation='secondary']::selection {
+.card[data-variation='secondary'] ::selection {
 	background: var(--color-dark);
 	color: var(--color-light);
 }

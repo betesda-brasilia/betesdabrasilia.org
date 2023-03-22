@@ -97,3 +97,7 @@ main:focus {
 	background: var(--color-light);
 	color: var(--color-dark);
 }
+
+* {
+	font-weight: var(--weight, initial);
+}

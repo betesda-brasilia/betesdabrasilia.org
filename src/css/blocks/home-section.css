@@ -1,20 +1,20 @@
-.home-section {
-	display: grid;
+.home-section__banner img {
+	position: absolute;
+	top: var(--size-step-4);
+	right: var(--size-step-6);
+	height: 28ch;
 }
 
 .main-text {
 	font-size: var(--size-step-3);
 	padding-inline: var(--space-s-m);
 	padding-block: var(--space-xl);
+	margin: 0 auto;
+	margin-block: 0;
+	margin-inline: auto;
 }
 
 .main-text span {
 	display: block;
 	font-size: var(--size-step-5);
-}
-
-@media (min-width: 40em) {
-	.home-section {
-		grid-template-columns: 1fr 25ch;
-	}
 }

@@ -1,5 +1,5 @@
 {
-	"name": "danielcandeira.com",
+	"name": "betesdabrasilia.org",
 	"version": "1.0.0",
 	"engines": {
 		"node": "16.x"
@@ -20,6 +20,8 @@
 		"@notionhq/client": "^2.2.3",
 		"concurrently": "^7.6.0",
 		"cssnano": "^5.1.15",
+		"dotenv": "^16.0.3",
+		"notion-to-md": "^2.5.5",
 		"postcss": "^8.4.21",
 		"postcss-cli": "^10.1.0",
 		"postcss-import": "^15.1.0",

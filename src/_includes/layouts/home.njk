@@ -2,22 +2,32 @@
  
 {% block content %}
 <div class="home-section">
-	<h1 class="not-italic main-text">
-		<span class="uppercase">{{ mainText }}</span>
-		{{ subText }}
-	</h1>
+	<div class="home-section__banner grid" data-layout="50-50">
+		<h1 class="not-italic main-text">
+			<span class="uppercase">{{ mainText }}</span>{{ subText }}
+		</h1>
+		<img src="/images/cross.svg" alt="">
+	</div>
 
-	<div class="home-section__cards">
-		<article class="[ card ] [ flow ]">
-			<h2> Title </h2>
-			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, vero quod architecto repudiandae numquam veritatis dolore soluta nemo, odio laboriosam quis eos, aliquam sit pariatur? Labore sit possimus fuga repellendus?</p>
-			<a href="/">Ver todos</a>
-		</article>
-		<article class="[ card ] [ flow ]" data-variation="secondary">
-			<h2> Title </h2>
-			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, vero quod architecto repudiandae numquam veritatis dolore soluta nemo, odio laboriosam quis eos, aliquam sit pariatur? Labore sit possimus fuga repellendus?</p>
-			<a href="/">Ver todos</a>
-		</article>
+	<div class="grid no-gap" data-layout="50-50">
+		<div class="[ card ] [ flow ]">
+			<h2> Post mais recente </h2>
+			<article class="flow">
+				<h3 class="size">Post title</h3>
+				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, vero quod architecto repudiandae numquam veritatis dolore soluta nemo, odio laboriosam quis eos, aliquam sit pariatur? Labore sit possimus fuga repellendus?</p>
+			</article>
+			<a href="/blog">Ver mais posts</a>
+		</div>
+		<div class="[ card ] [ flow ]" data-variation="secondary">
+			<h2> Eventos </h2>
+			<ul class="flow serif weight-medium" role="list">
+				<li>
+					Ensaio para cantata de Páscoa
+					<time class="block weight-normal"   datetime="2023-03-20T19:30:00">Segunda-feira às 19:30h</time>
+				</li>
+			</ul>
+			<a href="/eventos">Ver todos os eventos</a>
+		</div>
 	</div>
 </div>
 {% endblock %}

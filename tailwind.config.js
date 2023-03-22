@@ -77,7 +77,8 @@ module.exports = {
 				{key: 'colors', prefix: 'color'},
 				{key: 'spacing', prefix: 'space'},
 				{key: 'fontSize', prefix: 'size'},
-				{key: 'fontFamily', prefix: 'font'}
+				{key: 'fontFamily', prefix: 'font'},
+				{key: 'fontWeight', prefix: 'weight'}
 			];
 
 			groups.forEach(({key, prefix}) => {
@@ -102,7 +103,8 @@ module.exports = {
 			const currentConfig = config();
 			const customUtilities = [
 				{key: 'spacing', prefix: 'flow-space', property: '--flow-space'},
-				{key: 'colors', prefix: 'spot-color', property: '--spot-color'}
+				{key: 'colors', prefix: 'spot-color', property: '--spot-color'},
+				{key: 'fontWeight', prefix: 'weight', property: '--weight'}
 			];
 
 			customUtilities.forEach(({key, prefix, property}) => {

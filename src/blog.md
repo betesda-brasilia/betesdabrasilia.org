@@ -1,4 +1,4 @@
 ---
-layout: 'layouts/home.njk'
+layout: 'layouts/feed.njk'
 title: 'Blog'
 ---

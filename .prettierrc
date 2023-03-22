@@ -7,7 +7,6 @@
     "trailingComma": "none",
     "arrowParens": "avoid",
     "useTabs": true,
-    "semi": true,
-    "embeddedLanguageFormatting": "auto"
+    "semi": true
   }
   
