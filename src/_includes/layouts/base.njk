@@ -1,24 +1,29 @@
+{% set assetHash = global.random() %}
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
-		{# {% include "partials/meta-info.njk" %} #}
+		{% include "partials/meta-info.njk" %}
 
-		{# <link rel="stylesheet" href="/css/global.css?{{ assetHash }}" />  #}
-		<link rel="stylesheet" href="/css/global.css" />
-		{#  <link rel="icon" href="/images/favicon.svg" />  #}
+		<link rel="stylesheet" href="/css/global.css?{{ assetHash }}" /> 
+		 <link rel="icon" href="/images/favicon.svg" /> 
 
 		{# Add facility for pages to declare an array of stylesheet paths #}
-		{# {% if pageStylesheets %}
+		{% if pageStylesheets %}
       {% for item in pageStylesheets %}
         <link rel="stylesheet" media="print" href="{{ item }}?{{ assetHash }}" onload="this.media='all'" />
       {% endfor %}
-    {% endif %} #}
+    {% endif %}
 	</head>
 	<body>
-		{% block content %}{% endblock %}
+		{%- include "partials/site-header.njk" -%}
+		<main tabindex="-1" id="main">
+			{% block content %}
+			{% endblock %}
+		</main>
 		<footer class="site-foot" role="contentinfo">
 			<div class="wrapper">
 				{# <div class="site-foot__inner">

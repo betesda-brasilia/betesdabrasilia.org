@@ -1,7 +1,23 @@
 {% extends "layouts/base.njk" %}
  
 {% block content %}
-<main class="flow">
-	{{ content | safe }}
-</main>
+<div class="home-section">
+	<h1 class="not-italic main-text">
+		<span class="uppercase">{{ mainText }}</span>
+		{{ subText }}
+	</h1>
+
+	<div class="home-section__cards">
+		<article class="[ card ] [ flow ]">
+			<h2> Title </h2>
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, vero quod architecto repudiandae numquam veritatis dolore soluta nemo, odio laboriosam quis eos, aliquam sit pariatur? Labore sit possimus fuga repellendus?</p>
+			<a href="/">Ver todos</a>
+		</article>
+		<article class="[ card ] [ flow ]" data-variation="secondary">
+			<h2> Title </h2>
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, vero quod architecto repudiandae numquam veritatis dolore soluta nemo, odio laboriosam quis eos, aliquam sit pariatur? Labore sit possimus fuga repellendus?</p>
+			<a href="/">Ver todos</a>
+		</article>
+	</div>
+</div>
 {% endblock %}

@@ -1,0 +1,9 @@
+.site-header {
+	--gutter: 0.5rem var(--space-m);
+	padding-block: var(--space-m);
+	font-family: var(--font-serif);
+}
+
+.site-header__brand {
+	font-size: var(--size-step-3);
+}

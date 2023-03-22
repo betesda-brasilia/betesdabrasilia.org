@@ -1,0 +1,24 @@
+<a href="#main-content" class="skip-link">Ir para conteúdo</a>
+<header role="banner" class="site-header">
+	<div class="wrapper repel">
+		<a href="/" aria-label="{{ site.name }} - Home" class="site-header__brand">
+			{%- include 'partials/betesda.svg' -%}
+		</a>
+		<nav class="[ site-header__nav ] [ serif ]" aria-label="Primário">
+			<ul role="list" class="cluster nav__list">
+				{% for item in navigation.items %}
+					<li>
+						<a
+							href="{{ item.url }}"
+							{{ 
+								helpers.getLinkActiveState(item.url,page.url) | safe 
+							}}
+						>
+							{{ item.text }}
+						</a>
+					</li>
+				{% endfor %}
+			</ul>
+		</nav>
+	</div>
+</header>
