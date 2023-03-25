@@ -102,9 +102,14 @@ module.exports = {
 		plugin(function ({addUtilities, config}) {
 			const currentConfig = config();
 			const customUtilities = [
-				{key: 'spacing', prefix: 'flow-space', property: '--flow-space'},
+				{
+					key: 'spacing',
+					prefix: 'flow-space',
+					property: '--flow-space'
+				},
 				{key: 'colors', prefix: 'spot-color', property: '--spot-color'},
-				{key: 'fontWeight', prefix: 'weight', property: '--weight'}
+				{key: 'fontWeight', prefix: 'weight', property: '--weight'},
+				{key: 'fontFamily', prefix: 'font', property: '--font'}
 			];
 
 			customUtilities.forEach(({key, prefix, property}) => {

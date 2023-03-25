@@ -4,7 +4,6 @@ const {Client} = require('@notionhq/client');
 const {NotionToMarkdown} = require('notion-to-md');
 
 module.exports = async () => {
-	// return posts, latest post
 	// const notion = new Client({auth: process.env.NOTION_KEY});
 	// const n2m = new NotionToMarkdown({notionClient: notion});
 
@@ -24,4 +23,6 @@ module.exports = async () => {
 	// });
 
 	const getContent = async id => {};
+
+	// return { posts, latestPost: posts[0], tags, postsByTag }
 };

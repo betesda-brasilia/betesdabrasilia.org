@@ -1,8 +1,14 @@
 .site-header {
 	--gutter: 0.5rem var(--space-m);
-	padding-block: var(--space-m);
+	padding-block: var(--space-s);
 	font-family: var(--font-serif);
+	background-color: var(--color-primary);
+	color: var(--color-light);
 }
+
+/* .site-header > .curve {
+	transform: rotate(180deg) translateY(-1px);
+} */
 
 .site-header__brand {
 	font-size: var(--size-step-3);

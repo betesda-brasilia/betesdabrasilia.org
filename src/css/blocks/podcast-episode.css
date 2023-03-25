@@ -1,0 +1,19 @@
+.podcast-episode img {
+	border-radius: 4px;
+	border: 2px solid var(--color-primary);
+}
+
+.podcast-episode .player {
+	display: flex;
+	flex-wrap: wrap;
+
+	--gutter: var(--space-s);
+
+	gap: var(--gutter, var(--space-s-l));
+	background-color: var(--color-light);
+	width: fit-content;
+	padding: 0.7em;
+
+	border-radius: 4px;
+	border: 2px solid var(--color-secondary);
+}

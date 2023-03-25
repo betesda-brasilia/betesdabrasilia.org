@@ -1,33 +1,68 @@
 {% extends "layouts/base.njk" %}
  
 {% block content %}
-<div class="home-section">
-	<div class="home-section__banner grid" data-layout="50-50">
-		<h1 class="not-italic main-text">
-			<span class="uppercase">{{ mainText }}</span>{{ subText }}
-		</h1>
-		<img src="/images/cross.svg" alt="">
+<article class="section spot-color-primary">
+	<div class="section__inner home-section__banner">
+		<div class="wrapper flow">
+			<h1 class="not-italic no-hash">
+				<span class="uppercase">{{ mainText }}</span>{{ subText }}
+			</h1>
+			<p>
+				{{description}}
+			</p>
+		</div>
 	</div>
+	{% include 'curve.svg' %}
+</article>
+<article class="region">
+	<div class="wrapper flow">
+		<h2 >Posts mais recentes</h2>
+		<article class="flow font-serif">
+			<h3 ><a href="#"> Post title</a></h3>
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, vero quod architecto repudiandae numquam veritatis dolore soluta nemo, odio laboriosam quis eos, aliquam sit pariatur? Labore sit possimus fuga repellendus?</p>
+		</article>
+		<a class="cta font-serif font-bold" href="/blog">Ver mais posts</a>
+	</div>
+	{% include 'curve.svg' %}
+</article>
 
-	<div class="grid no-gap" data-layout="50-50">
-		<div class="[ card ] [ flow ]">
-			<h2> Post mais recente </h2>
-			<article class="flow">
-				<h3 class="size">Post title</h3>
-				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, vero quod architecto repudiandae numquam veritatis dolore soluta nemo, odio laboriosam quis eos, aliquam sit pariatur? Labore sit possimus fuga repellendus?</p>
-			</article>
-			<a href="/blog">Ver mais posts</a>
-		</div>
-		<div class="[ card ] [ flow ]" data-variation="secondary">
-			<h2> Eventos </h2>
-			<ul class="flow serif weight-medium" role="list">
-				<li>
-					Ensaio para cantata de Páscoa
-					<time class="block weight-normal"   datetime="2023-03-20T19:30:00">Segunda-feira às 19:30h</time>
-				</li>
-			</ul>
-			<a href="/eventos">Ver todos os eventos</a>
+<article class="section flow-space-xl spot-color-secondary">
+	{% include 'curve.svg' %}
+	<div class="section__inner">
+		<div class="wrapper flow">
+			<h2>Episódios mais recentes</h2>
+			<div class=" flow">
+				{% for episode in episodes.latestEpisodes %}
+					<article 
+					  class="[ podcast-episode ] [ flow flow-space-2xl-3xl font-serif ]">
+						<h3> 
+							<a href="{{episode.link}}">
+								{{episode.title}}
+							</a>
+						</h3>
+						<time>{{episode.publicationDate}}</time>
+						<div class="player flow-space-m">
+							{%- if  episode.coverImage -%}
+								<img src="{{episode.coverImage}}" alt="" width="50" height="50">
+							{%- endif -%}
+
+							<audio  controls="controls">
+								<source src="{{episode.audioInfo.url}}" type="{{episode.audioInfo.type}}" />
+								O seu navegador não suporta o elemento <code>audio</code>.
+							</audio>
+						</div>
+						{%- if episode.description.lenght > 0 -%}
+							<div>
+								{{episode.description | safe}}
+							</div>
+						{%- endif -%}
+					</article>
+				{% endfor %}
+			</div>
+			<a class="cta font-serif font-bold" href="/podcast">Ver todos os podcasts</a>
 		</div>
 	</div>
-</div>
+	{% include 'curve.svg' %}
+</article>
+
 {% endblock %}

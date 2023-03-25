@@ -5,16 +5,24 @@
 	height: 28ch;
 }
 
-.main-text {
+.home-section__banner h1 {
+	display: block;
 	font-size: var(--size-step-3);
-	padding-inline: var(--space-s-m);
-	padding-block: var(--space-xl);
-	margin: 0 auto;
-	margin-block: 0;
-	margin-inline: auto;
+	max-width: 20ch;
 }
 
-.main-text span {
+.home-section__banner h1 span {
 	display: block;
 	font-size: var(--size-step-5);
+}
+
+.home-section__banner p {
+	max-width: 35ch;
+	/* padding-bottom: var(--size-step-1);
+	padding-block-end: var(--size-step-1); */
+}
+
+.home-section__cards {
+	/* padding: var(--size-step-2) 0;
+	padding-block: var(--size-step-2); */
 }

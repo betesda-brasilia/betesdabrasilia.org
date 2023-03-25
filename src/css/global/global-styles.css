@@ -5,8 +5,8 @@
   project: https://cube.fyi/css.html
 */
 body {
-	color: var(--color-light);
-	background: var(--color-primary);
+	color: var(--color-dark);
+	background: var(--color-light);
 	font-size: var(--size-step-1);
 	font-family: var(--font-base);
 	line-height: 1.4;
@@ -21,16 +21,33 @@ h3 {
 	letter-spacing: var(--tracking-s);
 }
 
+h1::before,
+h2::before,
+h3::before {
+	margin-inline-start: -2ch;
+}
+
 h1 {
-	font-size: var(--size-step-5);
+	font-size: var(--size-step-3);
+}
+
+h1:not(.no-hash)::before {
+	content: '#';
 }
 
 h2 {
-	font-size: var(--size-step-4);
+	font-size: var(--size-step-2);
+}
+h2:not(.no-hash)::before {
+	content: '##';
 }
 
 h3 {
-	font-size: var(--size-step-3);
+	font-size: var(--size-step-1);
+}
+
+h3:not(.no-hash)::before {
+	content: '###';
 }
 
 /* Set line lengths */
@@ -43,7 +60,7 @@ blockquote:not([class]) {
 h1,
 h2,
 h3 {
-	max-width: 20ch;
+	max-width: 28ch;
 }
 
 /* More generic elements */
@@ -98,6 +115,12 @@ main:focus {
 	color: var(--color-dark);
 }
 
-* {
-	font-weight: var(--weight, initial);
+:is(h1, h2, h3) {
+	display: flex;
+	gap: 1ch;
+	line-height: 1.2;
+}
+
+:is(h1, h2, h3, p, a) {
+	font-weight: var(--weight, revert);
 }

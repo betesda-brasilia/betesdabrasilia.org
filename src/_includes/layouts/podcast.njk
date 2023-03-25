@@ -1,0 +1,9 @@
+{% extends "layouts/base.njk" %}
+
+
+{% block content %}
+<div class="region wrapper flow">
+	{% set episodes = episodes.allEpisodes %}
+	{% include "partials/podcast-card.njk" %}
+</div>
+{% endblock %}

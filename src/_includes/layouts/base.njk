@@ -25,7 +25,10 @@
 	</head>
 	<body>
 		{%- include "partials/site-header.njk" -%}
-		<main tabindex="-1" id="main">{% block content %} {% endblock %}</main>
+
+		<main tabindex="-1" id="main" class="flow">
+			{% block content %} {% endblock %}
+		</main>
 		<footer class="site-foot" role="contentinfo">
 			<div class="wrapper">
 				{#

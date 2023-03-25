@@ -17,6 +17,7 @@
 	"license": "ISC",
 	"dependencies": {
 		"@11ty/eleventy": "^2.0.0",
+		"@11ty/eleventy-fetch": "^4.0.0",
 		"@notionhq/client": "^2.2.3",
 		"concurrently": "^7.6.0",
 		"cssnano": "^5.1.15",
@@ -28,7 +29,9 @@
 		"postcss-import-ext-glob": "^2.1.1",
 		"postcss-js": "^4.0.1",
 		"prettier": "^2.8.4",
-		"slugify": "^1.6.5"
+		"slugify": "^1.6.5",
+		"xml-buffer-tostring": "^0.2.0",
+		"xml-js": "^1.6.11"
 	},
 	"devDependencies": {
 		"tailwindcss": "^3.2.7"
