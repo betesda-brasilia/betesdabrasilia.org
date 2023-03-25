@@ -21,12 +21,6 @@ h3 {
 	letter-spacing: var(--tracking-s);
 }
 
-h1::before,
-h2::before,
-h3::before {
-	margin-inline-start: -2ch;
-}
-
 h1 {
 	font-size: var(--size-step-3);
 }
@@ -111,7 +105,7 @@ main:focus {
 
 /* Base selection styles that invert whatever colours are rendered */
 ::selection {
-	background: var(--color-light);
+	background: var(--color-tertiary);
 	color: var(--color-dark);
 }
 

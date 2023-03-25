@@ -3,16 +3,37 @@
 	border: 2px solid var(--color-primary);
 }
 
+.podcast-episode .time {
+	color: var(--spot-color, var(--color-light));
+	width: fit-content;
+
+	--custom-padding: 0.2em;
+	padding: var(--custom-padding) var(--size-step-0);
+	padding-block: var(--custom-padding);
+	padding-inline: var(--size-step-0);
+
+	border: 2px solid var(--spot-color, var(--color-light));
+	border-radius: 4px;
+
+	margin-top: var(--size-step-0);
+	margin-block-start: var(--size-step-0);
+
+	font-size: var(--size-step-0);
+}
+
 .podcast-episode .player {
 	display: flex;
 	flex-wrap: wrap;
 
 	--gutter: var(--space-s);
-
 	gap: var(--gutter, var(--space-s-l));
 	background-color: var(--color-light);
 	width: fit-content;
-	padding: 0.7em;
+
+	--custom-padding: 0.7em;
+	padding: var(--custom-padding);
+	padding-block: var(--custom-padding);
+	padding-inline: var(--custom-padding);
 
 	border-radius: 4px;
 	border: 2px solid var(--color-secondary);

@@ -1,4 +1,4 @@
 ---
 layout: 'layouts/feed.njk'
-title: 'Blog'
+title: 'Todos os posts'
 ---

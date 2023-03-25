@@ -11,6 +11,20 @@ const descriptionFormatter = description => {
 	return descriptionsArray.slice(0, 0).join('\n');
 };
 
+const formatDate = date => {
+	const _date = new Date(date);
+	const year = _date.getFullYear();
+	let month = _date.getMonth() + 1; // Months start at 0!
+	let day = _date.getDate();
+
+	if (day < 10) day = '0' + day;
+	if (month < 10) month = '0' + month;
+
+	const formattedDate = `${day}/${month}/${year}`;
+
+	return formattedDate;
+};
+
 // fetch rss feed
 module.exports = async () => {
 	// const data = await fetch()
@@ -34,7 +48,7 @@ module.exports = async () => {
 		title: data['title']._cdata.trim(),
 		description: descriptionFormatter(data['description']._cdata),
 		link: data['link']._text,
-		publicationDate: data['pubDate']._text,
+		publicationDate: formatDate(data['pubDate']._text),
 		audioInfo: data['enclosure']._attributes,
 		coverImage: data['itunes:image']._attributes.href
 	}));

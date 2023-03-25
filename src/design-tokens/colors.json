@@ -33,6 +33,10 @@
 		{
 			"name": "Secondary Glare",
 			"value": "#37859E"
+		},
+		{
+			"name": "Tertiary",
+			"value": "#B89B93"
 		}
 	]
 }
