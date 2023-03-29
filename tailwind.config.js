@@ -11,7 +11,6 @@ const fontTokens = require('./src/design-tokens/fonts.json');
 const spacingTokens = require('./src/design-tokens/spacing.json');
 const textSizeTokens = require('./src/design-tokens/text-sizes.json');
 
-// Process design tokens
 const colors = tokensToTailwind(colorTokens.items);
 const fontFamily = tokensToTailwind(fontTokens.items);
 const fontSize = tokensToTailwind(clampGenerator(textSizeTokens.items));

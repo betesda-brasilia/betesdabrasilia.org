@@ -64,3 +64,27 @@ textarea,
 select {
 	font: inherit;
 }
+
+.slider input[type='range'] {
+	-webkit-appearance: none; /* Hides the slider so that custom slider can be made */
+	width: 100%; /* Specific width is required for Firefox. */
+	background: transparent; /* Otherwise white in Chrome */
+}
+
+.slider input[type='range']::-webkit-slider-thumb {
+	-webkit-appearance: none;
+}
+
+.slider input[type='range']:focus {
+	outline: none; /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */
+}
+
+.slider input[type='range']::-ms-track {
+	width: 100%;
+	cursor: pointer;
+
+	/* Hides the slider so custom styles can be added */
+	background: transparent;
+	border-color: transparent;
+	color: transparent;
+}

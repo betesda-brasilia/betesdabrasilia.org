@@ -1,4 +1,4 @@
-require('dotenv').config();
+// require('dotenv').config();
 
 const EleventyFetch = require('@11ty/eleventy-fetch');
 
@@ -6,9 +6,9 @@ const xmlBufferToString = require('xml-buffer-tostring');
 const {xml2json} = require('xml-js');
 
 const descriptionFormatter = description => {
-	const descriptionsArray = description.split('\n');
+	const descriptionsArray = description.split(/(?=<\/p>)/g);
 
-	return descriptionsArray.slice(0, 0).join('\n');
+	return descriptionsArray.slice(1, descriptionsArray.length).join('\n');
 };
 
 const formatDate = date => {
@@ -27,8 +27,8 @@ const formatDate = date => {
 
 // fetch rss feed
 module.exports = async () => {
-	// const data = await fetch()
-	const buffer = await EleventyFetch(`${process.env.PODCAST_RSS}`, {
+	const url = process.env.PODCAST_RSS;
+	const buffer = await EleventyFetch(`${url}`, {
 		duration: '5d'
 	});
 	const xmlString = xmlBufferToString(buffer);
@@ -53,7 +53,7 @@ module.exports = async () => {
 		coverImage: data['itunes:image']._attributes.href
 	}));
 
-	const latestEpisodes = allEpisodes.splice(0, 3);
+	const latestEpisodes = allEpisodes.filter((_, index) => index <= 3);
 
 	return {allEpisodes, latestEpisodes};
 };

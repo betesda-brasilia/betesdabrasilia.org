@@ -4,33 +4,42 @@
 {% block content %}
 <div class="region wrapper flow">
 	<h1>Epsódios</h1>
-	{% for episode in episodes.allEpisodes %}
-	<article class="[ podcast-episode ] [ flow flow-space-2xl-3xl font-serif ]" >
-		<h2 > 
-			<a href="{{episode.link}}">
-				{{episode.title}}
-			</a>
-		</h2>
-		<p class="time spot-color-primary">
-			Publicado em 
-			<time >{{episode.publicationDate}}</time>
-		</p>
-		<div class="player flow-space-m">
-			{%- if  episode.coverImage -%}
-				<img src="{{episode.coverImage}}" alt="" width="50" height="50">
-			{%- endif -%}
+	<div class="grid mt-l-xl" data-rows="masonry" data-layout="50-50">
+		{% for episode in podcastEpisodes.allEpisodes %}
+			<audio-player>
+				<article class="[ podcast-episode ] [ flow flow-space-2xl-3xl font-serif ]" >
+					<h2 > 
+						<a href="{{episode.link}}">
+							{{episode.title}}
+						</a>
+					</h2>
+					<p class="time spot-color-primary">
+						Publicado em 
+						<time >{{episode.publicationDate}}</time>
+					</p>
+					<div class="player flow-space-m">
+						{%- if  episode.coverImage -%}
+							<img src="{{episode.coverImage}}" alt="" width="100" height="100" loading="lazy">
+						{%- endif -%}
 
-			<audio  controls="controls">
-				<source src="{{episode.audioInfo.url}}" type="{{episode.audioInfo.type}}" />
-				O seu navegador não suporta o elemento <code>audio</code>.
-			</audio>
-		</div>
-		{%- if episode.description.lenght > 0 -%}
-		<div >
-			{{episode.description | safe}}
-		</div>
-		{%- endif -%}
-	</article>
-{% endfor %}
+						<audio 
+							preload="metadata" 
+							src="{{episode.audioInfo.url}}" 
+							type="{{episode.audioInfo.type}}"  
+							controls="controls">
+						</audio>
+					</div>
+					{%- if episode.description -%}
+					<div data-info="more-info">
+						{{episode.description | safe}}
+					</div>
+					{%- endif -%}
+				</article>
+			</audio-player>
+		{% endfor %}
+	</div>
 </div>
+<script type="module">
+	{% include 'components/audio-player.js' %}
+</script>
 {% endblock %}

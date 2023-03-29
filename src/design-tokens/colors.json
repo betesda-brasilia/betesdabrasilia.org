@@ -4,11 +4,15 @@
 	"items": [
 		{
 			"name": "Dark",
-			"value": "#292828"
+			"value": "#0E2830"
 		},
 		{
 			"name": "Dark Shade",
-			"value": "#20181A"
+			"value": "#071317"
+		},
+		{
+			"name": "Dark Glare",
+			"value": "#292828"
 		},
 		{
 			"name": "Light",

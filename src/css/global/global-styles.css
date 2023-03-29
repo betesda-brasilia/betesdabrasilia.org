@@ -22,25 +22,26 @@ h3 {
 }
 
 h1 {
-	font-size: var(--size-step-3);
+	font-size: var(--size-step-4);
 }
 
-h1:not(.no-hash)::before {
+h1.hash::before {
 	content: '#';
 }
 
 h2 {
-	font-size: var(--size-step-2);
+	font-size: var(--size-step-3);
 }
-h2:not(.no-hash)::before {
+
+h2.hash::before {
 	content: '##';
 }
 
 h3 {
-	font-size: var(--size-step-1);
+	font-size: var(--size-step-2);
 }
 
-h3:not(.no-hash)::before {
+h3.hash::before {
 	content: '###';
 }
 
