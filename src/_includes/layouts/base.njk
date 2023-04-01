@@ -10,7 +10,6 @@
 
 		<link rel="stylesheet" href="/css/global.css?{{ assetHash }}" />
 		<link rel="icon" href="/images/favicon.svg" />
-		<link rel="modulepreload" href="/js/component1.js" />
 
 		{# Add facility for pages to declare an array of stylesheet paths #} {% if
 		pageStylesheets %} 
@@ -32,15 +31,18 @@
 		</main>
 		<footer class="site-foot" role="contentinfo">
 			<div class="wrapper">
-				{#
+				
 				<div class="site-foot__inner">
-					{% include "icons/set.svg" %}
-					<p>
-						By <a href="https://piccalil.li">Andy Bell</a> for
-						<a href="https://set.studio">Set Studio</a>, published in 2022
-					</p>
+					{% for social in social.items %}
+						<a href="{{ social.link }}">
+							<span class="vh">
+								{{ social.name }}
+							</span>
+							{% include social.icon %}
+						</a>
+					{% endfor %}
 				</div>
-				#}
+				
 			</div>
 		</footer>
 	</body>

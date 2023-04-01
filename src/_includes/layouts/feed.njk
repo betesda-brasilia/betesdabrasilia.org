@@ -1,7 +1,25 @@
 {% extends "layouts/base.njk" %}
 
 {% block content %}
-<article class="region flow wrapper">
-	<h1>Posts</h1>
-</article>
+	<article class="region flow wrapper">
+		<h1>Posts</h1>
+		{% for post in blog.latestPosts %}
+			<article class="flow font-serif">
+				<h3 >
+					<a href="/blog/post/{{post.title | slugify}}"> {{post.title}}</a>
+				</h3>
+				<p class="time spot-color-light">
+					Publicado em 
+					<time datetime="{{ post.date | w3DateFilter }}">
+					{{  post.date | dateFilter }}
+					</time>
+				</p>
+				{% if post.summary %}
+					<div>
+					{{ post.summary | safe }}
+					</div>
+				{% endif %}
+			</article>
+		{% endfor %}
+	</article>
 {% endblock %}

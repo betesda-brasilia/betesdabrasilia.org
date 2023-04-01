@@ -1,5 +1,9 @@
 function formatTime(time) {
-	return new Date(time * 1000).toISOString().substr(11, 8);
+	const date = new Date(time * 1000);
+	if (isNaN(+date)) {
+		return '';
+	}
+	return new Date(time * 1000).toISOString().split('').slice(11, 19).join('');
 }
 
 class AudioPlayButton {

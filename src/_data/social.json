@@ -1,0 +1,14 @@
+{
+	"items": [
+		{
+			"name": "Instagram",
+			"icon": "icons/instagram.svg",
+			"link": "https://www.instagram.com/betesdabrasilia/"
+		},
+		{
+			"name": "Youtube",
+			"icon": "icons/youtube.svg",
+			"link": "https://www.youtube.com/@BetesdaBrasilia"
+		}
+	]
+}

@@ -1,0 +1,32 @@
+{% set title = post.title %} {% extends "layouts/base.njk" %} 
+{% block content %}
+<article class="region flow wrapper">
+	<h1>{{ post.title }}</h1>
+  <div>
+    <p class="time spot-color-light">
+      Publicado em
+      <time datetime="{{ post.date | w3DateFilter }}">
+        {{ post.date | dateFilter }}
+      </time>
+    </p>
+    <p>Aprensentação: {{ post.presentation }}</p>
+  </div>
+
+	{% if post.videoLink %}
+	<iframe
+		width="720"
+		height="576"
+		src="https://www.youtube.com/embed/{{ post.videoLink }}"
+		title="{{ post.title }}"
+		frameborder="0"
+		allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+		allowfullscreen
+	>
+	</iframe>
+	{% endif %}
+
+	<div class="prose flow">
+		{{ post.content | markdownify | safe }}
+	</div>
+</article>
+{% endblock %}

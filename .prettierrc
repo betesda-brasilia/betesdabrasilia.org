@@ -1,12 +1,20 @@
 {
-    "printWidth": 80,
-    "tabWidth": 4,
-    "singleQuote": true,
-    "bracketSpacing": false,
-    "quoteProps": "consistent",
-    "trailingComma": "none",
-    "arrowParens": "avoid",
-    "useTabs": true,
-    "semi": true
-  }
-  
+	"printWidth": 80,
+	"tabWidth": 4,
+	"singleQuote": true,
+	"bracketSpacing": false,
+	"quoteProps": "consistent",
+	"trailingComma": "none",
+	"arrowParens": "avoid",
+	"useTabs": true,
+	"semi": true,
+	"overrides": [
+		{
+			"files": ["./src/*.md", "./src/*.njk"],
+			"options": {
+				"useTabs": false,
+				"tabWidth": 2
+			}
+		}
+	]
+}

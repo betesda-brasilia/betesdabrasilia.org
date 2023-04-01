@@ -1,14 +1,14 @@
-{% extends "layouts/base.njk" %}
- 
+{% extends "layouts/base.njk" %} 
+
 {% block content %}
 <article class="section spot-color-primary">
 	<div class="section__inner home-section__banner">
 		<div class="wrapper flow">
 			<h1 class="not-italic no-hash">
-				<span class="uppercase">{{ mainText }}</span>{{ subText }}
+				<span class="uppercase">{{ mainText }}</span> &nbsp{{ subText }}
 			</h1>
 			<p class="font-serif">
-				{{description}}
+				{{ description }}
 			</p>
 		</div>
 	</div>
@@ -16,12 +16,33 @@
 </article>
 <article class="region">
 	<div class="wrapper flow">
-		<h2 >Posts mais recentes</h2>
-		<article class="flow font-serif">
-			<h3 ><a href="#"> Post title</a></h3>
-			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, vero quod architecto repudiandae numquam veritatis dolore soluta nemo, odio laboriosam quis eos, aliquam sit pariatur? Labore sit possimus fuga repellendus?</p>
+		<h2>Posts mais recentes</h2>
+		{% for post in blog.latestPosts %}
+		<article class="flow flow-space-xl font-serif">
+      <div class="flow-space-m">
+
+      
+			<h3>
+				<a href="/blog/post/{{ post.title | slugify }}">
+					{{ post.title }}</a
+				>
+			</h3>
+			<p class="time spot-color-light">
+				Publicado em 
+				<time datetime="{{ post.date | w3DateFilter }}">
+					{{ post.date | dateFilter }}
+				</time>
+			</p>
+      <p>Aprensentação: {{ post.presentation }}</p>
+			{% if post.summary %}
+			<div>
+				{{ post.content | safe }}
+			</div>
+			{% endif %}
+      </div>
 		</article>
-		<a class="cta font-serif font-bold" href="/blog">Ver mais posts</a>
+		{% endfor %}
+		<a class="cta font-serif font-bold" href="/blog">Ver todos os posts</a>
 	</div>
 	{% include 'curve.svg' %}
 </article>
@@ -33,35 +54,48 @@
 			<h2>Episódios mais recentes</h2>
 			<div class="grid mt-l-xl" data-rows="masonry" data-layout="50-50">
 				{% for episode in podcastEpisodes.latestEpisodes %}
-					<audio-player>
-						<article 
-						class="[ podcast-episode ] [ flow flow-space-2xl-3xl font-serif ]">
-								{%- if  episode.coverImage -%}
-									<img src="{{episode.coverImage}}" alt="" width="100" height="100">
-								{%- endif -%}
-							<h3> 
-								{{episode.title}}
-							</h3>
-							<p class="time spot-color-light">Publicado em <time>{{episode.publicationDate}}</time></p>
-							
-							<div class="player">
-								<audio 
-									preload="metadata" 
-									src="{{episode.audioInfo.url}}" 
-									type="{{episode.audioInfo.type}}"  
-									controls>
-								</audio>
-							</div>
-							{%- if episode.description -%}
-								<div data-info="more-info">
-									{{episode.description | safe}}
-								</div>
-							{%- endif -%}
-						</article>
-					</audio-player>
+				<audio-player>
+					<article
+						class="[ podcast-episode ] [ flow flow-space-2xl-3xl font-serif ]"
+					>
+						{%- if episode.coverImage -%}
+						<img
+							src="{{ episode.coverImage }}"
+							alt=""
+							width="100"
+							height="100"
+						/>
+						{%- endif -%}
+						<h3>
+							{{ episode.title }}
+						</h3>
+						<p class="time spot-color-light">
+							Publicado em {{episode.publicationDate}}
+							{# <time datetime="{{ episode.publicationDate | w3DateFilter }}">
+								{{ episode.publicationDate | dateFilter }}
+							</time> #}
+						</p>
+
+						<div class="player">
+							<audio
+								preload="metadata"
+								src="{{ episode.audioInfo.url }}"
+								type="{{ episode.audioInfo.type }}"
+								controls
+							></audio>
+						</div>
+						{%- if episode.description -%}
+						<div data-info="more-info">
+							{{ episode.description | safe }}
+						</div>
+						{%- endif -%}
+					</article>
+				</audio-player>
 				{% endfor %}
 			</div>
-			<a class="cta font-serif font-bold" href="/podcast">Ver todos os episódios</a>
+			<a class="cta font-serif font-bold" href="/podcast"
+				>Ver todos os episódios</a
+			>
 		</div>
 	</div>
 	{% include 'curve.svg' %}
