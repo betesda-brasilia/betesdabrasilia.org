@@ -1,7 +1,7 @@
 .site-foot {
 	padding: var(--space-s-m);
-	background: var(--color-light);
-	color: var(--color-dark);
+	background: var(--color-dark-shade);
+	color: var(--color-light);
 }
 
 .site-foot__inner {
@@ -13,5 +13,5 @@
 .site-foot svg {
 	width: 3em;
 	height: 3em;
-	fill: var(--spot-color, var(--color-primary));
+	fill: var(--spot-color, var(--color-light));
 }
