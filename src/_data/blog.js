@@ -22,7 +22,7 @@ module.exports = async () => {
 		urlObj.hash = '';
 
 		const result = urlObj.toString();
-		console.log(result);
+		// console.log(result);
 		return result.split('/').pop();
 	};
 

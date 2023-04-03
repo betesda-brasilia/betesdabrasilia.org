@@ -6,22 +6,21 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
-		{% include "partials/meta-info.njk" %}
+		{% set socialImage = '/images/share-image.png' %} {% include
+		"partials/meta-info.njk" %}
 
 		<link rel="stylesheet" href="/css/global.css?{{ assetHash }}" />
 		<link rel="icon" href="/images/favicon.svg" />
 
-		{# Add facility for pages to declare an array of stylesheet paths #} {% if
-		pageStylesheets %} 
-			{% for item in pageStylesheets %}
-				<link
-					rel="stylesheet"
-					media="print"
-					href="{{ item }}?{{ assetHash }}"
-					onload="this.media='all'"
-				/>
-			{% endfor %} 
-		{% endif %}
+		{# Add facility for pages to declare an array of stylesheet paths #} {%
+		if pageStylesheets %} {% for item in pageStylesheets %}
+		<link
+			rel="stylesheet"
+			media="print"
+			href="{{ item }}?{{ assetHash }}"
+			onload="this.media='all'"
+		/>
+		{% endfor %} {% endif %}
 	</head>
 	<body>
 		{%- include "partials/site-header.njk" -%}
@@ -31,18 +30,16 @@
 		</main>
 		<footer class="site-foot" role="contentinfo">
 			<div class="wrapper">
-				
 				<div class="site-foot__inner">
 					{% for social in social.items %}
-						<a href="{{ social.link }}">
-							<span class="vh">
-								{{ social.name }}
-							</span>
-							{% include social.icon %}
-						</a>
+					<a href="{{ social.link }}">
+						<span class="vh">
+							{{ social.name }}
+						</span>
+						{% include social.icon %}
+					</a>
 					{% endfor %}
 				</div>
-				
 			</div>
 		</footer>
 	</body>
