@@ -21,3 +21,11 @@
 .section :is(h1, h2, h3, blockquote) {
 	opacity: 95%;
 }
+
+.section .cta {
+	padding-top: var(--space-m);
+	padding-block-start: var(--space-m);
+
+	padding-bottom: var(--space-m);
+	padding-block-end: var(--space-m);
+}
