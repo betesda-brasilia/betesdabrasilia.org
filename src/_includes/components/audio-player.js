@@ -6,6 +6,13 @@ function formatTime(time) {
 	return new Date(time * 1000).toISOString().split('').slice(11, 19).join('');
 }
 
+function random() {
+	const segment = () => {
+		return (((1 + Math.random()) * 0x10000) | 0).toString(16).substring(1);
+	};
+	return `${segment()}-${segment()}-${segment()}`;
+}
+
 class AudioPlayButton {
 	constructor() {
 		this.isPlaying = false;
@@ -51,7 +58,7 @@ class AudioPlayButton {
 }
 
 class AudioScrubber {
-	constructor(label = 'Audio scrubber', inputId = Date.now()) {
+	constructor(label = 'Audio scrubber', inputId = random()) {
 		// scrubber setup
 		this.scrub = document.createElement('input');
 		this.scrub.setAttribute('id', inputId);

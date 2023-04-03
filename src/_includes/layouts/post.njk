@@ -1,16 +1,16 @@
-{% set title = post.title %} {% extends "layouts/base.njk" %} 
-{% block content %}
+{% set title = post.title %} {% extends "layouts/base.njk" %} {% block content
+%}
 <article class="region flow wrapper">
 	<h1>{{ post.title }}</h1>
-  <div>
-    <p class="time spot-color-light">
-      Publicado em
-      <time datetime="{{ post.date | w3DateFilter }}">
-        {{ post.date | dateFilter }}
-      </time>
-    </p>
-    <p>Aprensentação: {{ post.presentation }}</p>
-  </div>
+	<div>
+		<p class="time spot-color-light">
+			Publicado em
+			<time datetime="{{ post.date | w3DateFilter }}">
+				{{ post.date | dateFilter }}
+			</time>
+		</p>
+		<p>Aprensentação: {{ post.presentation }}</p>
+	</div>
 
 	{% if post.videoLink %}
 	<iframe

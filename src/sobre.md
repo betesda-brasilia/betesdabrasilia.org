@@ -1,4 +1,4 @@
 ---
-layout: 'layouts/base.njk'
+layout: 'layouts/about.njk'
 title: 'Sobre nós'
 ---

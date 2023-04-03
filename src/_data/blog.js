@@ -53,7 +53,9 @@ module.exports = async () => {
 						cover:
 							result.cover?.file?.url ||
 							result.cover?.external?.url,
-						// coverAlt: result.properties['Cover Alt']?.rich_text.pop()?.plain_text || '',
+						coverAlt:
+							result.properties['Capa Alt']?.rich_text.pop()
+								?.plain_text || '',
 						presentation:
 							result.properties['Apresentação']?.select?.name ||
 							'',
@@ -102,5 +104,9 @@ module.exports = async () => {
 
 	const content = await getBlogData();
 
-	return {posts: content, latestPosts: content.slice(0, 4)};
+	return {
+		posts: content.slice(0, 16),
+		latestPosts: content.slice(0, 4),
+		allPosts: content
+	};
 };

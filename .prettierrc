@@ -10,7 +10,7 @@
 	"semi": true,
 	"overrides": [
 		{
-			"files": ["./src/*.md", "./src/*.njk"],
+			"files": ["./src/*.md"],
 			"options": {
 				"useTabs": false,
 				"tabWidth": 2

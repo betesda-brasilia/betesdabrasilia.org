@@ -7,8 +7,8 @@ input[type='range'] {
 input[type='range'] {
 	color: var(--color-light);
 	--thumb-height: var(--size-step-2);
-	--track-height: var(--size-step-0);
-	--track-color: var(--color-dark);
+	--track-height: var(--size-step-1);
+	--track-color: var(--color-secondary-glare);
 	--brightness-hover: 180%;
 	--brightness-down: 80%;
 	--clip-edges: var(--size-step-0);
