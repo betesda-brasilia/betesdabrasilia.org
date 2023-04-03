@@ -1,0 +1,7 @@
+.warning {
+	padding-top: var(--space-s-m);
+	padding-block-start: var(--space-s-m);
+
+	padding-bottom: var(--space-s-m);
+	padding-block-end: var(--space-s-m);
+}
